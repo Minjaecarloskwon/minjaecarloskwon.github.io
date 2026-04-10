@@ -644,6 +644,129 @@
       font-weight: 600;
     }
 
+    /* Experience: employer vs project */
+    .employer-item-grid .employer-primary {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .employer-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      width: fit-content;
+    }
+
+    .item-role {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.5;
+      max-width: 42rem;
+    }
+
+    .nested-projects {
+      margin-top: 1.35rem;
+      padding-top: 1.35rem;
+      border-top: 1px solid var(--navy-lighter);
+    }
+
+    .nested-projects-heading {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.1rem;
+    }
+
+    .project-entry {
+      margin-bottom: 1.6rem;
+      padding-left: 1rem;
+      border-left: 2px solid var(--navy-lighter);
+    }
+
+    .project-entry:last-child {
+      margin-bottom: 0;
+    }
+
+    .project-entry-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.45rem 0.75rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-badge {
+      flex-shrink: 0;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--navy);
+      background: var(--accent);
+      padding: 0.2rem 0.5rem;
+      border-radius: 3px;
+      line-height: 1.2;
+    }
+
+    .project-entry-title {
+      font-size: 0.98rem;
+      font-weight: 600;
+      color: var(--text-bright);
+      flex: 1 1 12rem;
+      line-height: 1.35;
+    }
+
+    .project-entry-meta {
+      font-size: 0.72rem;
+      font-family: var(--font-mono);
+      font-variant-numeric: tabular-nums;
+      color: var(--muted);
+    }
+
+    .project-one-liner {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 0.45rem;
+      line-height: 1.55;
+    }
+
+    .project-partner {
+      font-weight: 500;
+      color: var(--muted);
+      font-size: 0.9em;
+    }
+
+    .project-entry ul {
+      margin-top: 0.45rem;
+    }
+
+    @media (min-width: 640px) {
+      .employer-item-grid .employer-primary {
+        grid-column: 1;
+      }
+
+      .employer-item-grid > .item-meta.employer-period {
+        grid-column: 2;
+        align-self: start;
+      }
+
+      .employer-item-grid > .item-desc {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 639px) {
+      .employer-item-grid > .item-meta.employer-period {
+        grid-column: 1;
+        text-align: left;
+      }
+    }
+
     .item-desc ul {
       margin-top: 0.65rem;
       padding-left: 1.15rem;
@@ -892,144 +1015,198 @@
         <h2 id="exp-heading" class="section-label">Experience</h2>
         <ul class="timeline">
           <li class="item">
-            <div class="item-grid">
-              <h3 class="item-title">레드캡투어(레드캡렌터카) · PM/PO</h3>
-              <span class="item-meta">2019.08 — 현재</span>
+            <div class="item-grid employer-item-grid">
+              <div class="employer-primary">
+                <span class="employer-label">소속</span>
+                <h3 class="item-title">레드캡투어(레드캡렌터카)</h3>
+                <p class="item-role">업무혁신담당 · 고객 서비스 기획 및 개발관리 · PM/PO</p>
+              </div>
+              <span class="item-meta employer-period">2019.08 — 현재</span>
               <div class="item-desc">
-                <p>고객 서비스 기획 및 개발관리. FMS·모빌리티 도메인에서 요구사항부터 운영·고도화까지 통합 리드.</p>
+                <p>FMS·모빌리티 도메인에서 요구사항 정의부터 구축, 베타 런칭, 운영 안정화·고도화까지 통합 리드.</p>
                 <ul>
-                  <li>정책·기능·UX 정의 및 상세 요구사항 구조화</li>
-                  <li>일정·범위·품질·이슈 통합 관리, 베타 이후 운영 안정화·개선 사이클 운영</li>
+                  <li>정책·기능·UX 정의 및 상세 요구사항 구조화, 일정·범위·품질·이슈 통합 관리</li>
                   <li>단말 납품·배포·장착·펌웨어 등 현장 운영 전 과정 조율</li>
-                  <li>AWS–IDC 하이브리드 아키텍처 기획·구축, 위치정보 실태조사 등 규제 대응 지원</li>
+                  <li>AWS–IDC 하이브리드 아키텍처 기획·구축, 내외부 시스템 연동</li>
                 </ul>
-                <div class="tags" role="list" aria-label="관련 영역">
+                <div class="tags" role="list" aria-label="소속 역할 관련 영역">
                   <span class="tag" role="listitem">PM</span>
+                  <span class="tag" role="listitem">PO</span>
                   <span class="tag" role="listitem">FMS</span>
                   <span class="tag" role="listitem">AWS</span>
                   <span class="tag" role="listitem">하이브리드</span>
-                  <span class="tag" role="listitem">위치정보</span>
+                </div>
+                <div class="nested-projects" aria-label="레드캡투어 수행 프로젝트">
+                  <p class="nested-projects-heading">수행 프로젝트</p>
+                  <article class="project-entry">
+                    <div class="project-entry-head">
+                      <span class="project-badge">프로젝트</span>
+                      <h4 class="project-entry-title">FMS 플랫폼 서버 이관</h4>
+                      <span class="project-entry-meta">2025.04 — 2025.11</span>
+                    </div>
+                    <p class="project-one-liner">LG전자가 구축한 FMS 플랫폼을 자사로 이관 · 운영 내재화</p>
+                    <ul>
+                      <li>이관 일정·작업 리스트 수립 및 전체 진행 관리, 필드 테스트로 운영 안정성 점검</li>
+                      <li>AWS 신규 계정·리소스 이전 구축 관리</li>
+                      <li>카자흐스탄 개발 인력과 협업하며 개발 커뮤니케이션 주도</li>
+                    </ul>
+                    <div class="tags" role="list">
+                      <span class="tag" role="listitem">Migration</span>
+                      <span class="tag" role="listitem">AWS</span>
+                      <span class="tag" role="listitem">글로벌 협업</span>
+                    </div>
+                  </article>
+                  <article class="project-entry">
+                    <div class="project-entry-head">
+                      <span class="project-badge">프로젝트</span>
+                      <h4 class="project-entry-title">렌터카 차량 관리 시스템 구축</h4>
+                      <span class="project-entry-meta">2025.03 — 2025.11</span>
+                    </div>
+                    <p class="project-one-liner">발주 옵션·계약·정비·사고 이력까지 관리하는 반응형 Web 및 관제·카셰어링·관리 통합 App</p>
+                    <ul>
+                      <li>사용자 인터뷰 기반 요구사항 정의, 초기 와이어프레임·UX 설계 참여</li>
+                      <li>일정·범위·품질·이슈 통합 관리로 프로젝트 추진</li>
+                    </ul>
+                    <div class="tags" role="list">
+                      <span class="tag" role="listitem">Web</span>
+                      <span class="tag" role="listitem">App</span>
+                      <span class="tag" role="listitem">UX</span>
+                    </div>
+                  </article>
+                  <article class="project-entry">
+                    <div class="project-entry-head">
+                      <span class="project-badge">프로젝트</span>
+                      <h4 class="project-entry-title">차량관제 서비스 구축 및 운영</h4>
+                      <span class="project-entry-meta">2024.01 — 2025.03</span>
+                    </div>
+                    <p class="project-one-liner">단말기 기반 법인차량 관제 및 차량유지비 관리 App·Web 서비스</p>
+                    <ul>
+                      <li>가입 고객사 증가, 약 4천대 규모 도입·확장, 운영 비용 절감·차량유지비 기반 부가수익 기여</li>
+                      <li>서비스 정책·기능·UX 주도, 개발 프로젝트 통합 관리, 현장·고객 이슈를 개선 요구로 전환</li>
+                      <li>위치정보 실태조사 대응 준비 등 규제 리스크 관리 지원</li>
+                    </ul>
+                    <div class="tags" role="list">
+                      <span class="tag" role="listitem">관제</span>
+                      <span class="tag" role="listitem">단말</span>
+                      <span class="tag" role="listitem">PM</span>
+                    </div>
+                  </article>
+                  <article class="project-entry">
+                    <div class="project-entry-head">
+                      <span class="project-badge">프로젝트</span>
+                      <h4 class="project-entry-title">콜센터 직원용 챗봇 구축</h4>
+                      <span class="project-entry-meta">2024.04 — 2024.07</span>
+                    </div>
+                    <p class="project-one-liner">콜센터 업무 프로세스·고객 안내 매뉴얼을 챗봇으로 구현</p>
+                    <ul>
+                      <li>챗봇 아키텍처·구축 방식 검토·선정, 프로젝트 추진 방향 수립</li>
+                      <li>개발 일정·범위·품질 관리, 기획 및 대화 시나리오 설계 병행</li>
+                      <li>인프라 셋업, 발화 재학습, 운영관리 체계 정리</li>
+                    </ul>
+                    <div class="tags" role="list">
+                      <span class="tag" role="listitem">챗봇</span>
+                      <span class="tag" role="listitem">PM</span>
+                    </div>
+                  </article>
+                  <article class="project-entry">
+                    <div class="project-entry-head">
+                      <span class="project-badge">프로젝트</span>
+                      <h4 class="project-entry-title">RPA 업무 프로세스 자동화 구축 및 운영</h4>
+                      <span class="project-entry-meta">2023.04 — 현재</span>
+                    </div>
+                    <p class="project-one-liner">내부 단순 업무에 RPA 솔루션 도입 · 운영·유지보수</p>
+                    <ul>
+                      <li>사용자 프로세스 분석으로 자동화 대상·우선순위 정의</li>
+                      <li>협력사 개발 인력 관리, 공수 산정 검토, 운영·유지보수 체계 관리</li>
+                      <li>현업 요구·운영 이슈를 기술 과제로 연결해 개선 사이클 운영</li>
+                    </ul>
+                    <div class="tags" role="list">
+                      <span class="tag" role="listitem">RPA</span>
+                      <span class="tag" role="listitem">자동화</span>
+                    </div>
+                  </article>
+                  <article class="project-entry">
+                    <div class="project-entry-head">
+                      <span class="project-badge">프로젝트</span>
+                      <h4 class="project-entry-title">B2G향 B-lifecare 협력사업 <span class="project-partner">(with LG에너지솔루션)</span></h4>
+                      <span class="project-entry-meta">2022.08 — 2023.01</span>
+                    </div>
+                    <p class="project-one-liner">차량 단말기를 활용한 전기차 배터리 자산관리 서비스</p>
+                    <ul>
+                      <li>고객사 요구 정의·초기 서비스 모델 기획, 협력사·고객사 커뮤니케이션으로 방향·범위 조율</li>
+                      <li>전기차량 250여 대 규모 도입·초기 운영 지원</li>
+                    </ul>
+                    <div class="tags" role="list">
+                      <span class="tag" role="listitem">B2G</span>
+                      <span class="tag" role="listitem">EV</span>
+                      <span class="tag" role="listitem">PM</span>
+                    </div>
+                  </article>
+                  <article class="project-entry">
+                    <div class="project-entry-head">
+                      <span class="project-badge">프로젝트</span>
+                      <h4 class="project-entry-title">위치정보사업 TF</h4>
+                      <span class="project-entry-meta">2022.02 — 2022.08</span>
+                    </div>
+                    <p class="project-one-liner">개인위치정보사업·위치기반서비스업 심사 준비 · Task Force 리드</p>
+                    <ul>
+                      <li>방송통신위원회 심사 대응 자료 준비, 시스템 구현 관련 커뮤니케이션</li>
+                      <li>기술적 보호조치·서비스 약관 준비로 규제 리스크 대응</li>
+                    </ul>
+                    <div class="tags" role="list">
+                      <span class="tag" role="listitem">규제</span>
+                      <span class="tag" role="listitem">위치정보</span>
+                    </div>
+                  </article>
+                  <article class="project-entry">
+                    <div class="project-entry-head">
+                      <span class="project-badge">프로젝트</span>
+                      <h4 class="project-entry-title">법인 카셰어링 모바일 앱·Web 구축 <span class="project-partner">(with LG전자)</span></h4>
+                      <span class="project-entry-meta">2021.04 — 2022.12</span>
+                    </div>
+                    <p class="project-one-liner">차량 단말기·디지털 키 기반 법인차량 셰어링 App·Web</p>
+                    <ul>
+                      <li>사용자 조사 기반 컨셉 도출, 기능·정책·UX 설계 주도</li>
+                      <li>베트남 개발 협력사 관리, 일정·개발 커뮤니케이션 리드</li>
+                      <li>AWS 인프라 셋업, 메시징·MAP·내부 시스템 연동, LG 품질검증·개인정보 영향평가·iOS 배포</li>
+                      <li>베타 런칭 이후 운영 이슈 수집·정리로 안정화·개선 주도</li>
+                    </ul>
+                    <div class="tags" role="list">
+                      <span class="tag" role="listitem">모바일</span>
+                      <span class="tag" role="listitem">AWS</span>
+                      <span class="tag" role="listitem">Product</span>
+                    </div>
+                  </article>
                 </div>
               </div>
             </div>
           </li>
           <li class="item">
             <div class="item-grid">
-              <h3 class="item-title">FMS 플랫폼 서버 이관 (LG전자 → 자사)</h3>
-              <span class="item-meta">2025.04 — 2025.11</span>
-              <div class="item-desc">
-                <ul>
-                  <li>이관 일정·작업 리스트 수립 및 전체 진행 관리, 필드 테스트로 운영 안정성 점검</li>
-                  <li>AWS 신규 계정·리소스 이전 구축 관리</li>
-                  <li>카자흐스탄 개발 인력과 협업하며 개발 커뮤니케이션 주도</li>
-                </ul>
-                <div class="tags" role="list">
-                  <span class="tag" role="listitem">Migration</span>
-                  <span class="tag" role="listitem">AWS</span>
-                  <span class="tag" role="listitem">글로벌 협업</span>
-                </div>
+              <div class="employer-primary">
+                <span class="employer-label">소속</span>
+                <h3 class="item-title">임피리얼 팰리스 호텔</h3>
+                <p class="item-role">글로벌 기업 대상 B2B 세일즈</p>
               </div>
-            </div>
-          </li>
-          <li class="item">
-            <div class="item-grid">
-              <h3 class="item-title">렌터카 차량 관리 시스템 · 통합 App</h3>
-              <span class="item-meta">2025.03 — 2025.11</span>
+              <span class="item-meta">2016.06 — 2018.05</span>
               <div class="item-desc">
-                <ul>
-                  <li>발주 옵션·계약·정비·사고 이력까지 관리하는 반응형 Web 및 관제·카셰어링·관리 통합 App</li>
-                  <li>사용자 인터뷰 기반 요구사항 정의, 와이어·UX 설계 참여, 일정·범위·품질 통합 관리</li>
-                </ul>
-                <div class="tags" role="list">
-                  <span class="tag" role="listitem">PM</span>
-                  <span class="tag" role="listitem">Web</span>
-                  <span class="tag" role="listitem">App</span>
-                  <span class="tag" role="listitem">UX</span>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li class="item">
-            <div class="item-grid">
-              <h3 class="item-title">차량관제 App·Web 구축·운영</h3>
-              <span class="item-meta">2024.01 — 2025.03</span>
-              <div class="item-desc">
-                <ul>
-                  <li>단말 기반 법인차량 관제·차량유지비 관리 서비스 — 가입 확대, 약 4천대 규모 도입·확장, 운영비 절감·부가수익 기여</li>
-                  <li>서비스 정책·기능·UX 주도, 개발 프로젝트 통합 관리, 현장·고객 이슈를 개선 요구로 전환</li>
-                </ul>
-                <div class="tags" role="list">
-                  <span class="tag" role="listitem">관제</span>
-                  <span class="tag" role="listitem">단말</span>
-                  <span class="tag" role="listitem">PM</span>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li class="item">
-            <div class="item-grid">
-              <h3 class="item-title">법인 카셰어링 모바일 (LG전자 협력)</h3>
-              <span class="item-meta">2021.04 — 2022.12</span>
-              <div class="item-desc">
-                <ul>
-                  <li>단말·디지털 키 기반 App·Web — 운전자 경험·관리자 배차 효율 개선</li>
-                  <li>컨셉·기능·정책·UX 주도, 베트남 협력사 일정·개발 커뮤니케이션 리드</li>
-                  <li>AWS 인프라, 메시징·MAP·내부 시스템 연동, LG 품질검증·개인정보 영향평가·iOS 배포</li>
-                </ul>
-                <div class="tags" role="list">
-                  <span class="tag" role="listitem">Product</span>
-                  <span class="tag" role="listitem">모바일</span>
-                  <span class="tag" role="listitem">AWS</span>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li class="item">
-            <div class="item-grid">
-              <h3 class="item-title">B2G EV 배터리 자산관리 (LG에너지솔루션)</h3>
-              <span class="item-meta">2022.08 — 2023.01</span>
-              <div class="item-desc">
-                <ul>
-                  <li>고객 요구 정의·초기 서비스 모델 기획, 대기업 협력사·고객사 커뮤니케이션으로 방향·범위 조율</li>
-                  <li>전기차량 250여 대 규모 도입·초기 운영 지원</li>
-                </ul>
-                <div class="tags" role="list">
-                  <span class="tag" role="listitem">B2G</span>
-                  <span class="tag" role="listitem">EV</span>
-                  <span class="tag" role="listitem">PM</span>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li class="item">
-            <div class="item-grid">
-              <h3 class="item-title">챗봇 · RPA · 위치정보 TF</h3>
-              <span class="item-meta">2022 — 현재</span>
-              <div class="item-desc">
-                <ul>
-                  <li><strong>위치정보 TF (2022)</strong> 심사 대응 자료·시스템 커뮤니케이션, 기술적 보호조치·약관 준비</li>
-                  <li><strong>콜센터 챗봇 (2024)</strong> 아키텍처 검토·일정·시나리오·인프라·운영 체계 수립</li>
-                  <li><strong>RPA (2023 — 현재)</strong> 자동화 대상 정의, 협력사 공수·유지보수·개선 사이클 관리</li>
-                </ul>
-                <div class="tags" role="list">
-                  <span class="tag" role="listitem">규제</span>
-                  <span class="tag" role="listitem">챗봇</span>
-                  <span class="tag" role="listitem">RPA</span>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li class="item">
-            <div class="item-grid">
-              <h3 class="item-title">임피리얼 팰리스 호텔 · Accor 노보텔 앰배서더</h3>
-              <span class="item-meta">2009.05 — 2018.05</span>
-              <div class="item-desc">
-                <ul>
-                  <li>글로벌 기업 대상 B2B 세일즈 (임피리얼 팰리스, 2016 — 2018)</li>
-                  <li>정부·공공·국제행사 유치 등 세일즈 (노보텔 앰배서더, 2009 — 2016)</li>
-                </ul>
                 <div class="tags" role="list">
                   <span class="tag" role="listitem">B2B</span>
+                  <span class="tag" role="listitem">Sales</span>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="item">
+            <div class="item-grid">
+              <div class="employer-primary">
+                <span class="employer-label">소속</span>
+                <h3 class="item-title">Accor 노보텔 앰배서더 호텔</h3>
+                <p class="item-role">정부·공공기관 세일즈, 국제행사 유치</p>
+              </div>
+              <span class="item-meta">2009.05 — 2016.06</span>
+              <div class="item-desc">
+                <div class="tags" role="list">
                   <span class="tag" role="listitem">B2G</span>
                   <span class="tag" role="listitem">Sales</span>
                 </div>
